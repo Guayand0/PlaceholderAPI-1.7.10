@@ -9,7 +9,7 @@ plugins {
 }
 
 group = "me.clip"
-version = "2.12.3-DEV-${System.getProperty("BUILD_NUMBER")}"
+version = "2.12.2"
 
 description = "An awesome placeholder provider!"
 
@@ -35,6 +35,8 @@ repositories {
 dependencies {
     implementation("org.bstats:bstats-bukkit:3.1.0")
     implementation("net.kyori:adventure-platform-bukkit:4.4.1")
+    implementation("com.google.code.gson:gson:2.13.2")
+    implementation("com.google.guava:guava:21.0")
 
     add(paper.compileOnlyConfigurationName, "net.kyori:adventure-platform-bukkit:4.4.1")
     add(paper.compileOnlyConfigurationName, "dev.folia:folia-api:1.21.11-R0.1-SNAPSHOT")
@@ -128,6 +130,8 @@ tasks {
 
         relocate("org.bstats", "me.clip.placeholderapi.metrics")
         relocate("net.kyori", "me.clip.placeholderapi.libs.kyori")
+        relocate("com.google.gson", "me.clip.placeholderapi.libs.gson")
+        relocate("com.google.common", "me.clip.placeholderapi.libs.guava")
 
         exclude("META-INF/versions/**")
 
