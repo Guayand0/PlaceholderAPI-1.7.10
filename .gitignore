@@ -4,4 +4,3 @@ server/
 build/
 out/
 *.iml
-start.bat
